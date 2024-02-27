@@ -5,22 +5,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.dao_hibernate.entity.Persons;
-import ru.netology.dao_hibernate.service.Service;
+import ru.netology.dao_hibernate.service.PersonsService;
 
 import java.util.List;
 
 @RestController
-public class Controller {
+public class PersonsController {
 
-    private final Service service;
+    private final PersonsService personsService;
 
-    public Controller(Service service) {
-        this.service = service;
+    public PersonsController(PersonsService personsService) {
+        this.personsService = personsService;
     }
 
     @GetMapping("/persons/by-city")
     @ResponseBody
     public List<Persons> getMapping(@RequestParam("city") String city) {
-        return service.getPersonsByCity(city);
+        return personsService.getPersonsByCity(city);
     }
 }

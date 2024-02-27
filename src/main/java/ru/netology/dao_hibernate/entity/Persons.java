@@ -2,10 +2,10 @@ package ru.netology.dao_hibernate.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import lombok.*;
 
-@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,6 +13,7 @@ import lombok.*;
 @Setter
 @Table(name = "Persons", schema = "netology")
 @Entity
+@IdClass(PersonsId.class)
 public class Persons {
     @Id
     private String name;
@@ -21,5 +22,5 @@ public class Persons {
     @Id
     private int age;
     private String phone_number;
-    private String city_of_living;
+    private String cityOfLiving;
 }
