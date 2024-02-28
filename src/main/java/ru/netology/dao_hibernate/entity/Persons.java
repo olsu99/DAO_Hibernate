@@ -1,9 +1,6 @@
 package ru.netology.dao_hibernate.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Builder
@@ -21,6 +18,8 @@ public class Persons {
     private String surname;
     @Id
     private int age;
+    @Column(name="phone_number")
     private String phone_number;
-    private String cityOfLiving;
+    @Column(name="city_of_living")
+    private String city_of_living;
 }

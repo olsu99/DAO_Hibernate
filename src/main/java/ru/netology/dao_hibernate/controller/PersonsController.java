@@ -19,7 +19,6 @@ public class PersonsController {
     }
 
     @GetMapping("/persons/by-city")
-    @ResponseBody
     public List<Persons> getMapping(@RequestParam("city") String city) {
         return personsService.getPersonsByCity(city);
     }

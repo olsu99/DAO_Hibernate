@@ -16,7 +16,7 @@ public class PersonsRepo {
     @Transactional
     public List<Persons> getPersonsByCity(String city) {
         return entityManager.createQuery(
-                        "select p from Persons p where p.cityOfLiving = :city", Persons.class
+                        "select p from Persons p where p.city_of_living = :city", Persons.class
                 )
                 .setParameter("city", city)
                 .getResultList();
